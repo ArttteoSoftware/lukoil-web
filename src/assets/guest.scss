@@ -1,0 +1,51 @@
+.ant-input {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-variant: tabular-nums;
+    list-style: none;
+    font-feature-settings: 'tnum', "tnum";
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    min-width: 0;
+    padding: 4px 11px;
+    color: rgba(0, 0, 0, 0.85);
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    transition: all 0.3s;
+    height: 48px;
+    color: #fff;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+
+}
+
+.ant-input:focus, .ant-input-focused {
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 0px rgb(24 144 255 / 20%);
+    border-right-width: 1px;
+    outline: 0;
+}
+
+.ant-input:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    border-right-width: 1px;
+}
+
+
+.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input, .ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input:hover {
+    background: transparent;
+    border-color: #be2b34;
+}
+
+.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input:focus, .ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input-focused {
+    border-color: #be2b34;
+    box-shadow: 0 0 0 0px rgb(255 77 79 / 20%);
+    border-right-width: 1px;
+    outline: 0;
+}

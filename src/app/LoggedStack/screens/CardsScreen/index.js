@@ -2,11 +2,11 @@ import React, { useState, Fragment, useEffect, useContext, useRef } from 'react'
 import styled from 'styled-components';
 import { MainOrders, MainBalance, LoggedHeader, Cards } from 'components';
 import { Link } from 'react-router-dom';
-import ArrowLeftIcon from 'assets/media/arrow-right.svg';
-import InfoCircleIcon from 'assets/media/info-circle.svg';
-import CardsIcon from 'assets/media/cards.svg';
-
-const MainScreen = ({history}) => {
+import VisaSvgIcon from 'assets/media/visa.svg';
+import MastercardSvgIcon from 'assets/media/mastercard.svg';
+import DotsIcon from 'assets/media/dots.svg';
+import ArrowLeftIcon from 'assets/media/arrow-left.svg';
+const CardsScreen = ({history}) => {
     const [isLoading, setLoading] = useState(false);
 
     return (
@@ -14,38 +14,24 @@ const MainScreen = ({history}) => {
             <Layout>
                 <LoggedHeader showRightSide/>
                 <ProfileContainer>
-                    <View>Profile</View>
+                    <View onClick={() => history.goBack()}>
+                        <img src={ArrowLeftIcon} style={{marginRight: 10}}/>
+                        Payment methods
+                    </View>
                     <MenuBlockContainer>
-                        <BlockHeaderText>Account information</BlockHeaderText>
-                        <MenuBlock onClick={() => history.push('/profile/personal-info')}>
-                            <Block>
-                                <BlockIcon src={InfoCircleIcon}/>
-                                <BlockText>Personal Info</BlockText>
-                            </Block>
-                            <ArrowLeft src={ArrowLeftIcon}/>
-                        </MenuBlock>
-                        <MenuBlock onClick={() => history.push('/profile/cards')}>
-                            <Block>
-                                <BlockIcon src={CardsIcon}/>
-                                <BlockText>Payment methods</BlockText>
-                            </Block>
-                            <ArrowLeft src={ArrowLeftIcon}/>
-                        </MenuBlock>
-                    </MenuBlockContainer>
-                    <MenuBlockContainer>
-                        <BlockHeaderText>Settings</BlockHeaderText>
                         <MenuBlock>
                             <Block>
-                                <BlockText>English</BlockText>
+                                <BlockIcon src={VisaSvgIcon}/>
+                                <BlockText>**** **** **** 6755</BlockText>
                             </Block>
-                            <ArrowLeft src={ArrowLeftIcon}/>
+                            <ArrowLeft src={DotsIcon}/>
                         </MenuBlock>
                         <MenuBlock>
                             <Block>
-                                
-                                <BlockText>Log out</BlockText>
+                                <BlockIcon src={MastercardSvgIcon}/>
+                                <BlockText>**** **** **** 6672</BlockText>
                             </Block>
-                            <ArrowLeft src={ArrowLeftIcon}/>
+                            <ArrowLeft src={DotsIcon}/>
                         </MenuBlock>
                     </MenuBlockContainer>
                 </ProfileContainer>
@@ -59,16 +45,6 @@ const MainScreen = ({history}) => {
 }
 const MenuBlockContainer = styled.div `
     margin-top: 24px;
-`
-const BlockHeaderText = styled.div `
-    margin-bottom: 16px;
-    font-family: 'Plus Jakarta Sans';
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 20px;
-    letter-spacing: -0.2800000011920929px;
-    text-align: left;
-    color: #000000;
 `
 const MenuBlock = styled.a `
     background-color: #fff;
@@ -119,6 +95,11 @@ const View = styled.div `
     letter-spacing: -0.2800000011920929px;
     text-align: left;
     color: #000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
 `
 const ContainerBlock = styled.div `
     display: flex;
@@ -133,4 +114,4 @@ const RightPanel = styled.div `
     width: 406px;
     background-color: #F2F2F2;
 `
-export default MainScreen;
+export default CardsScreen;

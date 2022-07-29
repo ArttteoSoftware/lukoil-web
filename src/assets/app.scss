@@ -37,7 +37,9 @@ body {
     color: #fff;
 }
 
-.ant-btn:hover, .ant-btn:focus, .ant-btn:active {
+.ant-btn:hover,
+.ant-btn:focus,
+.ant-btn:active {
     color: #fff;
     border-color: #DB2B36;
     background: #be2b34;
@@ -62,7 +64,7 @@ body {
     border-radius: 8px;
     transition: all 0.3s;
     height: 48px;
-    color: #fff;
+    color: #000;
     font-family: 'Plus Jakarta Sans';
     font-size: 14px;
     font-weight: 400;
@@ -70,7 +72,8 @@ body {
 
 }
 
-.ant-input:focus, .ant-input-focused {
+.ant-input:focus,
+.ant-input-focused {
     border-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 0 0px rgb(24 144 255 / 20%);
     border-right-width: 1px;
@@ -83,12 +86,14 @@ body {
 }
 
 
-.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input, .ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input:hover {
+.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input,
+.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input:hover {
     background: transparent;
     border-color: #be2b34;
 }
 
-.ant-form-item-explain, .ant-form-item-extra {
+.ant-form-item-explain,
+.ant-form-item-extra {
     clear: both;
     color: rgba(0, 0, 0, 0.45);
     font-size: 14px;
@@ -102,50 +107,87 @@ body {
     transition: none;
 }
 
-.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input:focus, .ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input-focused {
+.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input:focus,
+.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input-focused {
     border-color: #be2b34;
     box-shadow: 0 0 0 0px rgb(255 77 79 / 20%);
     border-right-width: 1px;
     outline: 0;
 }
 
-.carousel-dots li {
-    position: relative;
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    margin: 0 0px;
-    padding: 0;
-    cursor: pointer;
-}
+.ymgf-dssd {
+    margin-top: 25px;
+    .float-label {
+        position: relative;
+        margin-bottom: 12px;
+    }
 
-.carousel-dots li button {
-    font-size: 0;
-    line-height: 0;
-    display: block;
-    width: 15px;
-    height: 15px;
-    padding: 5px;
-    cursor: pointer;
-    color: transparent;
-    border: 0;
-    outline: none;
-    background: transparent;
-}
+    .label {
+        position: absolute;
+        pointer-events: none;
+        left: 30px;
+        top: 28px;
+        transition: 0.2s ease all;
+        font-family: 'Plus Jakarta Sans';
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: -0.2800000011920929px;
+        text-align: left;
+        color: #000;
+        opacity: .6;
+    }
 
-.carousel-dots li button:before {
-    font-family: 'slick';
-    font-size: 25px;
-    line-height: 20px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 15px;
-    height: 15px;
-    content: '•';
-    text-align: center;
-    opacity: .25;
-    color: black;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    .label-float {
+        top: 18px;
+        font-family:'Plus Jakarta Sans';
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 15px;
+        letter-spacing: -0.2800000011920929px;
+        text-align: left;
+        color: #000;
+        opacity: .6;
+    }
+
+    .ant-input {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-variant: tabular-nums;
+        list-style: none;
+        font-feature-settings: 'tnum', "tnum";
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        min-width: 0;
+        padding: 4px 30px;
+        color: rgba(0, 0, 0, 0.85);
+        background-color: transparent;
+        background-image: none;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        transition: all 0.3s;
+        height: 80px;
+        color: #000;
+        font-family: 'Plus Jakarta Sans';
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+
+    }
+
+    .ant-form-item {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        color: rgba(0, 0, 0, 0.85);
+        font-size: 14px;
+        font-variant: tabular-nums;
+        line-height: 1.5715;
+        list-style: none;
+        font-feature-settings: 'tnum', "tnum";
+        margin-bottom: 0px;
+        vertical-align: top;
+    }
 }

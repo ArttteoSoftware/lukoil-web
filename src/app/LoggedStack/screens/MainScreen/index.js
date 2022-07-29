@@ -105,6 +105,7 @@ const ContainerBlock = styled.div `
 const Layout = styled.div `
     flex: 1;
     padding: 32px;
+    position: relative;
 `
 const RightPanel = styled.div `
     padding: 32px;

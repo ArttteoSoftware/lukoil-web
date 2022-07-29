@@ -21,7 +21,6 @@ const LeftNavigationMenu = (props) => {
             </LogoArea>
             <MeniuContainer>
                 <MenuLi>
-                    
                     <NavLink to="/home"><img src={HomeIcon}/> <span>Home</span></NavLink>
                 </MenuLi>
                 <MenuLi>
