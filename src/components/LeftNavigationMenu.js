@@ -1,13 +1,14 @@
 import React, { useState, Fragment, useEffect, useContext, useRef } from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import LogoSvg from 'assets/media/Logo.svg';
 import HomeIcon from 'assets/media/home.svg';
 import GasStation from 'assets/media/gas-station.svg';
 import ProfileIcon from 'assets/media/profile.svg';
 
-const LeftNavigationMenu = ({history}) => {
-    
+const LeftNavigationMenu = (props) => {
+
+
 
     return (
         <LeftMenuWidth>
@@ -20,16 +21,14 @@ const LeftNavigationMenu = ({history}) => {
             </LogoArea>
             <MeniuContainer>
                 <MenuLi>
-                    <img src={HomeIcon}/>
-                    <NavLink to="/">Home</NavLink>
+                    
+                    <NavLink to="/home"><img src={HomeIcon}/> <span>Home</span></NavLink>
                 </MenuLi>
                 <MenuLi>
-                    <img src={GasStation}/>
-                    <NavLink to="/shop">Shop</NavLink>
+                    <NavLink to="/shop"><img src={GasStation}/> <span>Shop</span></NavLink>
                 </MenuLi>
                 <MenuLi>
-                    <img src={ProfileIcon}/>
-                    <NavLink to="/profile">Profile</NavLink>
+                    <NavLink to="/profile"><img src={ProfileIcon}/> <span>Profile</span></NavLink>
                 </MenuLi>
             </MeniuContainer>
         </LeftMenuWidth>
@@ -81,34 +80,46 @@ const MeniuContainer = styled.ul `
 `
 const MenuLi = styled.li `
     display: block;
-    border-right: 2px solid #000;
-    padding: 0px 30px;
-    transition: all 0.3s;
+    padding: 0px 0px;
     display: flex;
     align-items: center;
-    & > img {
-        opacity: .6;
-    }
     & > a {
+        transition: all 0.3s;
         display: block;
-        padding: 20px 0px;
+        padding: 20px 30px;
         color: #fff;
         opacity: .6;
-        margin-left: 15px;
         width: 100%;
+        border-right: 2px solid #000;
+        display: flex;
+        align-items: center;
+        & > img {
+            opacity: .6;
+            margin-right: 15px;
+        }
+    }
+    & > a.active {
+        border-right: 2px solid #DB2B36;
+        opacity: 1;
+        & > img {
+                opacity: 1;
+        }
     }
     &:hover {
         background-color: #0A0A0A;
-        border-right: 2px solid #DB2B36;
         & > a {
             display: block;
-            padding: 20px 0px;
+            padding: 20px 30px;
             color: #fff;
             opacity: 1;
+            border-right: 2px solid #DB2B36;
+            display: flex;
+            align-items: center;
+            & > img {
+                opacity: 1;
+            }
         }
-        & > img {
-            opacity: 1;
-        }
+
     }
 `
 export default LeftNavigationMenu;

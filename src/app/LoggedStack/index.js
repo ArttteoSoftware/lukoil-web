@@ -1,13 +1,16 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import  { LeftNavigationMenu } from 'components'
 
 import {
     MainScreen,
-    ShopScreen
+    ShopScreen,
+    ProfileScreen
 } from './screens'
-const LoggedStack = () => {
+const LoggedStack = (props) => {
+
+    
     return (
         <Router>
             <Container>
@@ -15,7 +18,10 @@ const LoggedStack = () => {
             <Content>
                 <Switch>
                     <Route exact={true} path='/' component={MainScreen}/>
+                    <Route exact={true} path='/home' component={MainScreen}/>
                     <Route exact={true} path='/shop' component={ShopScreen}/>
+                    <Route exact={true} path='/profile' component={ProfileScreen}/>
+                    
                 </Switch>
             </Content>
             </Container>
