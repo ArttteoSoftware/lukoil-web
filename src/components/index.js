@@ -6,3 +6,4 @@ export { default as Cards } from './Cards';
 export { default as Products } from './Products';
 export { default as Cart } from './Cart';
 export { default as FloatLable } from './FloatLable';
+export { default as Tranfer } from './Tranfer';

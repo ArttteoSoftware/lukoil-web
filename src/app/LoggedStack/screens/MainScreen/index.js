@@ -10,7 +10,7 @@ const MainScreen = ({history}) => {
     return (
        <ContainerBlock>
             <Layout>
-                <LoggedHeader showRightSide/>
+                <LoggedHeader/>
                 <Cards/>
                 <View style={{marginTop: 30}}>
                     <Grid>

@@ -1,10 +1,12 @@
 import React, { useState, Fragment, useEffect, useContext, useRef } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import ExchangeIcon from 'assets/media/exchange.svg';
+import TransferIcon from 'assets/media/transfer.svg';
 import EditName from 'assets/media/editName.svg';
 import GassIcon from 'assets/media/Gass.svg';
+import { Tranfer } from 'components'
 const MainBalance = ({showCard}) => {
+    const [showButton, setShowButton] = useState(false);
     
 
     return (
@@ -14,7 +16,7 @@ const MainBalance = ({showCard}) => {
                     <Text style={{marginBottom: 5}}>Balance</Text>
                     <TextPrice>432.00L</TextPrice>
                 </View>
-                <Link to="/"><img src={ExchangeIcon}/></Link>
+                <ExchangeButton onClick={() => setShowButton((old) => old ? false : true)}><img src={showButton ? TransferIcon : ExchangeIcon}/></ExchangeButton>
             </MainBalanceheader>
             {
                 showCard &&
@@ -31,6 +33,7 @@ const MainBalance = ({showCard}) => {
                     </ViewBlock>
                 </MainCard>
             }
+
             <View style={{marginTop: 30}}>
                 <Block>
                     <Text>Super Ecto 100</Text>
@@ -53,9 +56,13 @@ const MainBalance = ({showCard}) => {
                     <TextPriceM>0.00 L</TextPriceM>
                 </Block>
             </View>
+            {showButton && <Tranfer/>}
         </MainbalanceContainer>        
     )
 }
+const ExchangeButton = styled.div `
+cursor: pointer;
+`
 const MainCard = styled.div `
     background: #DB2B36;
     border-radius: 12px;
