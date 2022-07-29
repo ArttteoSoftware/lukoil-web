@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 13px;
+    line-height: 13px;
+}
+
+
+.ant-btn {
+    font-family: 'Plus Jakarta Sans';
+    line-height: 18px;
+    position: relative;
+    display: inline-block;
+    font-weight: 700;
+    white-space: nowrap;
+    text-align: center;
+    background-image: none;
+    border: 1px solid transparent;
+    box-shadow: 0 2px 0 rgb(0 0 0 / 2%);
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    height: 48px;
+    padding: 4px 15px;
+    font-size: 14px;
+    border-radius: 8px;
+    color: rgba(0, 0, 0, 0.85);
+    border-color: #DB2B36;
+    background: #DB2B36;
+    letter-spacing: -0.2800000011920929px;
+    color: #fff;
+}
+
+.ant-btn:hover, .ant-btn:focus, .ant-btn:active {
+    color: #fff;
+    border-color: #DB2B36;
+    background: #be2b34;
+}
+
+.ant-input {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-variant: tabular-nums;
+    list-style: none;
+    font-feature-settings: 'tnum', "tnum";
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    min-width: 0;
+    padding: 4px 11px;
+    color: rgba(0, 0, 0, 0.85);
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    transition: all 0.3s;
+    height: 48px;
+    color: #fff;
+    font-family: 'Plus Jakarta Sans';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+
+}
+
+.ant-input:focus, .ant-input-focused {
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 0px rgb(24 144 255 / 20%);
+    border-right-width: 1px;
+    outline: 0;
+}
+
+.ant-input:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    border-right-width: 1px;
+}
+
+
+.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input, .ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input:hover {
+    background: transparent;
+    border-color: #be2b34;
+}
+
+.ant-form-item-explain, .ant-form-item-extra {
+    clear: both;
+    color: rgba(0, 0, 0, 0.45);
+    font-size: 14px;
+    line-height: 1.5715;
+    transition: color 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+    display: none;
+}
+
+.ant-form-item-with-help {
+    margin-bottom: 24px;
+    transition: none;
+}
+
+.ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input:focus, .ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input-focused {
+    border-color: #be2b34;
+    box-shadow: 0 0 0 0px rgb(255 77 79 / 20%);
+    border-right-width: 1px;
+    outline: 0;
+}
+
+.carousel-dots li {
+    position: relative;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0 0px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.carousel-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 15px;
+    height: 15px;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+
+.carousel-dots li button:before {
+    font-family: 'slick';
+    font-size: 25px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    content: '•';
+    text-align: center;
+    opacity: .25;
+    color: black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

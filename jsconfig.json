@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "paths": {
+            "components/*": ["./src/components/*"],
+            "assets/*": ["./src/assets/*"],
+            "lib/*": ["./src/lib/*"],
+            "context/*": ["./src/context/*"]
+        }
+    },
+    "exclude": ["./config", "./config/**", "./public", "./build"]
+}
