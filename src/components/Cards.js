@@ -25,7 +25,7 @@ const Cards = () => {
 
 
     return (
-        <View style={{marginTop: 32, minWidth: 918, maxWidth: 918, overflowX: 'scroll'}}>
+        <View style={{marginTop: 32, minWidth: '100%', maxWidth: '100%', overflowX: 'scroll'}}>
             <Slider>
                 {
                     data.map((v,index) => {
@@ -115,7 +115,7 @@ const View = styled.div `
 `
 const CardStyle = styled.div `
     height: 220px;
-    min-width: 49%;
+    min-width: 48%;
 `
 const BlockMargin = styled.div `
     margin-right: 10px !important;

@@ -1,6 +1,6 @@
 import React, { useState, Fragment, useEffect, useContext, useRef } from 'react';
 import styled from 'styled-components';
-import { MainOrders, MainBalance, Products, LoggedHeader, Cart } from 'components';
+import { MainOrders, MainBalance, Products, LoggedHeader, Cart, SidebarPanel } from 'components';
 import GassBlack from 'assets/media/GassBlack.svg';
 
 
@@ -15,10 +15,10 @@ const ShopScreen = ({history}) => {
                     setList(e);
                 }}/>
             </Layout>
-            <RightPanel>
+            <SidebarPanel>
                 <MainBalance showCard/>
                 <Cart list={list}/>
-            </RightPanel>
+            </SidebarPanel>
        </ContainerBlock>
     )
 }

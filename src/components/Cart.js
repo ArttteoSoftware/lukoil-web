@@ -27,7 +27,7 @@ const MainOrders = ({refresh}) => {
                 <ViewAll onClick={() => onClearCart()}>Clear</ViewAll>
             </Header>
             <Block>
-                <CartItems windowHeight={window.outerHeight}>
+                <CartItems>
                     {
                         !isEmpty(cartList) ? 
                             map(cartList, (item, index) => {
@@ -64,13 +64,21 @@ const MainOrders = ({refresh}) => {
                         </EmptyContainer>
                     }
                 </CartItems>
-                <Button block disabled={isEmpty(cartList)}>Checkout</Button>
+
             </Block>
+            <ButtonChekOut>
+                <Button block disabled={isEmpty(cartList)}>Checkout</Button>
+            </ButtonChekOut>
         </CartContainer>
     )
 }
+const ButtonChekOut = styled.div `
+    position: absolute;
+    bottom: 20px;
+    width: 85%;
+`
 const ButtonRemove = styled.div `
-    width: 90px;
+    width: 70px;
     height: 36px;
     top: 34px;
     background: #000000;
@@ -98,6 +106,7 @@ const HeaderText = styled.div `
     letter-spacing: -0.2800000011920929px;
     text-align: left;
     color: #000;
+
 `
 const ViewAll = styled.div `
         font-family: 'Plus Jakarta Sans';
@@ -115,6 +124,7 @@ const ViewAll = styled.div `
 const Block = styled.div `
     display: flex;
     flex-direction: column;
+    position: relative;
     
 `
 const CartItems = styled.div `
@@ -195,5 +205,9 @@ const Texted = styled.div `
     letter-spacing: -0.2800000011920929px;
     text-align: left;
     color: #000000;
+    width: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 `
 export default MainOrders;

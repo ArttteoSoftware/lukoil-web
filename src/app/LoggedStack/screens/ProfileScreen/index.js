@@ -1,6 +1,6 @@
 import React, { useState, Fragment, useEffect, useContext, useRef } from 'react';
 import styled from 'styled-components';
-import { MainOrders, MainBalance, LoggedHeader, Cards } from 'components';
+import { MainOrders, MainBalance, LoggedHeader, SidebarPanel } from 'components';
 import { Link } from 'react-router-dom';
 import ArrowLeftIcon from 'assets/media/arrow-right.svg';
 import InfoCircleIcon from 'assets/media/info-circle.svg';
@@ -50,10 +50,10 @@ const MainScreen = ({history}) => {
                     </MenuBlockContainer>
                 </ProfileContainer>
             </Layout>
-            <RightPanel>
+            <SidebarPanel>
                 <MainBalance/>
                 <MainOrders/>
-            </RightPanel>
+            </SidebarPanel>
        </ContainerBlock>
     )
 }

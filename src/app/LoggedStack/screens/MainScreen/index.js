@@ -1,6 +1,6 @@
 import React, { useState, Fragment, useEffect, useContext, useRef } from 'react';
 import styled from 'styled-components';
-import { MainOrders, MainBalance, LoggedHeader, Cards } from 'components';
+import { MainOrders, MainBalance, LoggedHeader, Cards, SidebarPanel } from 'components';
 import GassBlack from 'assets/media/GassBlack.svg';
 
 
@@ -52,10 +52,10 @@ const MainScreen = ({history}) => {
                     </Grid>
                 </View>
             </Layout>
-            <RightPanel>
+            <SidebarPanel>
                 <MainBalance/>
                 <MainOrders/>
-            </RightPanel>
+            </SidebarPanel>
        </ContainerBlock>
     )
 }
@@ -107,9 +107,5 @@ const Layout = styled.div `
     padding: 32px;
     position: relative;
 `
-const RightPanel = styled.div `
-    padding: 32px;
-    width: 406px;
-    background-color: #F2F2F2;
-`
+
 export default MainScreen;

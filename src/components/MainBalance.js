@@ -1,13 +1,19 @@
 import React, { useState, Fragment, useEffect, useContext, useRef } from 'react';
 import styled from 'styled-components';
+import { Button } from 'antd';
 import ExchangeIcon from 'assets/media/exchange.svg';
 import TransferIcon from 'assets/media/transfer.svg';
 import EditName from 'assets/media/editName.svg';
 import GassIcon from 'assets/media/Gass.svg';
 import { Tranfer } from 'components'
-const MainBalance = ({showCard}) => {
+const MainBalance = ({showCard, showTranfer}) => {
     const [showButton, setShowButton] = useState(false);
-    
+    const [showTransfer, setShowTranfer] = useState(false);
+
+    const cancel = () => {
+        setShowButton((old) => old ? false : true);
+        setShowTranfer(false);
+    }
 
     return (
         <MainbalanceContainer>
@@ -16,47 +22,57 @@ const MainBalance = ({showCard}) => {
                     <Text style={{marginBottom: 5}}>Balance</Text>
                     <TextPrice>432.00L</TextPrice>
                 </View>
-                <ExchangeButton onClick={() => setShowButton((old) => old ? false : true)}><img src={showButton ? TransferIcon : ExchangeIcon}/></ExchangeButton>
+                <ExchangeButton onClick={() => cancel()}><img src={showButton ? TransferIcon : ExchangeIcon}/></ExchangeButton>
             </MainBalanceheader>
             {
-                showCard &&
-                <MainCard>
-                    <ViewBlock>
-                        <CardBlockText>
-                            <TextM>Card name</TextM>
-                            <TextBlock>
-                                <TextT>My card</TextT>
-                                <EditIcon src={EditName}/>
-                            </TextBlock>
-                        </CardBlockText>
-                        <BlockGassIcon src={GassIcon}/>
-                    </ViewBlock>
-                </MainCard>
-            }
+                !showTransfer ? 
+                <Fragment>
+                    {
+                        showCard &&
+                        <MainCard>
+                            <ViewBlock>
+                                <CardBlockText>
+                                    <TextM>Card name</TextM>
+                                    <TextBlock>
+                                        <TextT>My card</TextT>
+                                        <EditIcon src={EditName}/>
+                                    </TextBlock>
+                                </CardBlockText>
+                                <BlockGassIcon src={GassIcon}/>
+                            </ViewBlock>
+                        </MainCard>
+                    }
 
-            <View style={{marginTop: 30}}>
-                <Block>
-                    <Text>Super Ecto 100</Text>
-                    <TextPriceM>280.20 L</TextPriceM>
-                </Block>
-                <Block>
-                    <Text>Super Ecto</Text>
-                    <TextPriceM>520.00 L</TextPriceM>
-                </Block>
-                <Block>
-                    <Text>Premium Avangard</Text>
-                    <TextPriceM>0.00 L</TextPriceM>
-                </Block>
-                <Block>
-                    <Text>Euro Regular</Text>
-                    <TextPriceM>0.00 L</TextPriceM>
-                </Block>
-                <Block>
-                    <Text>Euro Diesel</Text>
-                    <TextPriceM>0.00 L</TextPriceM>
-                </Block>
-            </View>
-            {showButton && <Tranfer/>}
+                    <View style={{marginTop: 30}}>
+                        <Block>
+                            <Text>Super Ecto 100</Text>
+                            <TextPriceM>280.20 L</TextPriceM>
+                        </Block>
+                        <Block>
+                            <Text>Super Ecto</Text>
+                            <TextPriceM>520.00 L</TextPriceM>
+                        </Block>
+                        <Block>
+                            <Text>Premium Avangard</Text>
+                            <TextPriceM>0.00 L</TextPriceM>
+                        </Block>
+                        <Block>
+                            <Text>Euro Regular</Text>
+                            <TextPriceM>0.00 L</TextPriceM>
+                        </Block>
+                        <Block>
+                            <Text>Euro Diesel</Text>
+                            <TextPriceM>0.00 L</TextPriceM>
+                        </Block>
+                    </View>
+                </Fragment>
+            : <Tranfer/>}
+            {
+                showButton && 
+                <View style={{marginTop: 20}}>
+                    <Button onClick={() => setShowTranfer(true)} block>Transfer between accounts/cards</Button>
+                </View>
+            }
         </MainbalanceContainer>        
     )
 }
