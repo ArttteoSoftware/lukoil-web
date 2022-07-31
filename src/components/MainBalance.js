@@ -9,6 +9,8 @@ import { Tranfer } from 'components'
 const MainBalance = ({showCard, showTranfer}) => {
     const [showButton, setShowButton] = useState(false);
     const [showTransfer, setShowTranfer] = useState(false);
+    
+
 
     const cancel = () => {
         setShowButton((old) => old ? false : true);
@@ -68,7 +70,7 @@ const MainBalance = ({showCard, showTranfer}) => {
                 </Fragment>
             : <Tranfer/>}
             {
-                showButton && 
+                !showTransfer && showButton && 
                 <View style={{marginTop: 20}}>
                     <Button onClick={() => setShowTranfer(true)} block>Transfer between accounts/cards</Button>
                 </View>
