@@ -7,18 +7,34 @@ import Cookies from 'js-cookie'
 
 const RootScreens = () => {
     const [user, setUser] = useState(true);
+    const [winSize, setWinSize] = useState()
     useEffect(() => {
         getMainData();
     }, []);
 
 
-    const getMainData = async () => {
+    useEffect(() => {
+        function handleResize() {
+            setWinSize(window.outerWidth);
+        }
+        window.addEventListener('resize', handleResize)
+    });
+    
+    
 
+
+    const getMainData = async () => {
+        setWinSize(window.outerWidth);
     }
 
-
-    return (
-        user ? <LoggedStack/> : <GuestStack/>
-    )
+    console.log(winSize);
+    if (winSize > 1023) {
+        return (
+            user ? <LoggedStack/> : <GuestStack/>
+        )
+    }
+    else {
+        return null
+    }
 }
 export default RootScreens;
