@@ -3,18 +3,26 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import UserImageSvg from 'assets/media/user.svg';
 import LogoSvg from 'assets/media/Logo.svg';
-
-const LoggedHeader = ({showRightSide}) => {
+const LoggedMobileheader = ({title, description, noLogo, bigBg, showCard}) => {
     
 
     return (
-        <LoggedHeaderContainer>
-            <LogoBlock><img src={LogoSvg}/></LogoBlock>
-            <CenterBlock>
-                <TextDate>28 June, 2022</TextDate>
-                <NameText>Welcome, Irakli</NameText>
-            </CenterBlock>
-            <UserBlock><img src={UserImageSvg}/></UserBlock>
+        <LoggedHeaderContainer bigBg={bigBg ? 155 : 125}>
+            {!noLogo ? <LogoBlock><img src={LogoSvg}/></LogoBlock> : <View/>}
+            {
+            title ? 
+                <CenterBlock>
+                    <NameText>{title}</NameText>
+                    <TextDate>{description}</TextDate>
+                </CenterBlock>
+            :
+                <CenterBlock>
+                    <TextDate>28 June, 2022</TextDate>
+                    <NameText>Welcome, Irakli</NameText>
+                </CenterBlock>
+            
+            }
+            {!noLogo ? <UserBlock><img src={UserImageSvg}/></UserBlock> : <View/>}
         </LoggedHeaderContainer>        
     )
 }
@@ -24,7 +32,7 @@ const LoggedHeaderContainer = styled.div `
     justify-content: space-between;
     align-items: center;
     background-color: #000;
-    height: 125px;
+    height: ${props => props.bigBg+'px'};
     padding-left: 16px;
     padding-right: 16px;
 `
@@ -63,4 +71,4 @@ const NameText = styled.div `
     color: #FFFFFF;
 `
 
-export default LoggedHeader;
+export default LoggedMobileheader;
