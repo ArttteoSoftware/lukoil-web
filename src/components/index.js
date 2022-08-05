@@ -12,4 +12,4 @@ export { default as LoggedMobileheader } from './LoggedMobileheader';
 export { default as BottomNavigationTabBar } from './BottomNavigationTabBar';
 export { default as ProductsMobile } from './ProductsMobile';
 export { default as SmallCard } from './SmallCard';
-
+export { default as CartMobile } from './CartMobile';

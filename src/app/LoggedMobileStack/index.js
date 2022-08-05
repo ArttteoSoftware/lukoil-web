@@ -6,6 +6,7 @@ import  { BottomNavigationTabBar } from 'components'
 import {
     MainScreen,
     ShopScreen,
+    CartScreen,
     ProfileScreen,
     CardsScreen,
     PersonalinfoScreen,
@@ -21,6 +22,7 @@ const LoggedStack = (props) => {
                     <Route exact={true} path='/' component={MainScreen}/>
                     <Route exact={true} path='/home' component={MainScreen}/>
                     <Route exact={true} path='/shop' component={ShopScreen}/>
+                    <Route exact={true} path='/cart' component={CartScreen}/>
                     {/* <Route exact={true} path='/profile' component={ProfileScreen}/>
                     <Route exact={true} path='/profile/cards' component={CardsScreen}/>
                     <Route exact={true} path='/profile/personal-info' component={PersonalinfoScreen}/>
