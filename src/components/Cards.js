@@ -92,6 +92,9 @@ const GridItem = styled.div `
     margin-bottom: 10px;
 `
 const GridItemName = styled.div `
+    @media only screen and (min-width:300px) and (max-width:768px){
+        font-size: 12px;
+    }
     font-family: 'Plus Jakarta Sans';
     font-size: 14px;
     font-weight: 700;
@@ -114,10 +117,17 @@ const View = styled.div `
 
 `
 const CardStyle = styled.div `
+    @media only screen and (min-width:300px) and (max-width:768px){
+        height: 220px;
+        min-width: 96%;
+    }
     height: 220px;
     min-width: 48%;
 `
 const BlockMargin = styled.div `
+    @media only screen and (min-width:300px) and (max-width:768px){
+        padding: 20px;
+    }
     margin-right: 10px !important;
     border-radius: 12px;
     height: 220px;

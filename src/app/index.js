@@ -3,6 +3,8 @@ import React, { useState, useEffect, useContext } from 'react';
 import { isEmpty } from 'lodash';
 import GuestStack from './GuestStack'
 import LoggedStack from './LoggedStack'
+import GuestMobileStack from './GuestMobileStack'
+import LoggedMobileStack from './LoggedMobileStack'
 import Cookies from 'js-cookie'
 
 const RootScreens = () => {
@@ -20,21 +22,17 @@ const RootScreens = () => {
         window.addEventListener('resize', handleResize)
     });
     
-    
-
-
     const getMainData = async () => {
         setWinSize(window.outerWidth);
     }
 
-    console.log(winSize);
     if (winSize > 1023) {
         return (
             user ? <LoggedStack/> : <GuestStack/>
         )
     }
     else {
-        return null
+        return user ? <LoggedMobileStack/> : <GuestMobileStack/>
     }
 }
 export default RootScreens;
