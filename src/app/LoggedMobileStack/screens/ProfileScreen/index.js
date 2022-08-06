@@ -1,6 +1,6 @@
 import React, { useState, Fragment, useEffect, useContext, useRef } from 'react';
 import styled from 'styled-components';
-import { MainOrders, MainBalance, LoggedHeader, SidebarPanel } from 'components';
+import { LoggedMobileheader } from 'components';
 import { Link } from 'react-router-dom';
 import ArrowLeftIcon from 'assets/media/arrow-right.svg';
 import InfoCircleIcon from 'assets/media/info-circle.svg';
@@ -11,49 +11,42 @@ const MainScreen = ({history}) => {
 
     return (
        <ContainerBlock>
-            <Layout>
-                <LoggedHeader showRightSide/>
-                <ProfileContainer>
-                    <View>Profile</View>
-                    <MenuBlockContainer>
-                        <BlockHeaderText>Account information</BlockHeaderText>
-                        <MenuBlock onClick={() => history.push('/profile/personal-info')}>
-                            <Block>
-                                <BlockIcon src={InfoCircleIcon}/>
-                                <BlockText>Personal Info</BlockText>
-                            </Block>
-                            <ArrowLeft src={ArrowLeftIcon}/>
-                        </MenuBlock>
-                        <MenuBlock onClick={() => history.push('/profile/cards')}>
-                            <Block>
-                                <BlockIcon src={CardsIcon}/>
-                                <BlockText>Payment methods</BlockText>
-                            </Block>
-                            <ArrowLeft src={ArrowLeftIcon}/>
-                        </MenuBlock>
-                    </MenuBlockContainer>
-                    <MenuBlockContainer>
-                        <BlockHeaderText>Settings</BlockHeaderText>
-                        <MenuBlock>
-                            <Block>
-                                <BlockText>English</BlockText>
-                            </Block>
-                            <ArrowLeft src={ArrowLeftIcon}/>
-                        </MenuBlock>
-                        <MenuBlock>
-                            <Block>
-                                
-                                <BlockText>Log out</BlockText>
-                            </Block>
-                            <ArrowLeft src={ArrowLeftIcon}/>
-                        </MenuBlock>
-                    </MenuBlockContainer>
-                </ProfileContainer>
-            </Layout>
-            <SidebarPanel>
-                <MainBalance/>
-                <MainOrders/>
-            </SidebarPanel>
+            <LoggedMobileheader/>
+            <ProfileContainer>
+                <MenuBlockContainer>
+                    <BlockHeaderText>Account information</BlockHeaderText>
+                    <MenuBlock onClick={() => history.push('/profile/personal-info')}>
+                        <Block>
+                            <BlockIcon src={InfoCircleIcon}/>
+                            <BlockText>Personal Info</BlockText>
+                        </Block>
+                        <ArrowLeft src={ArrowLeftIcon}/>
+                    </MenuBlock>
+                    <MenuBlock onClick={() => history.push('/profile/cards')}>
+                        <Block>
+                            <BlockIcon src={CardsIcon}/>
+                            <BlockText>Payment methods</BlockText>
+                        </Block>
+                        <ArrowLeft src={ArrowLeftIcon}/>
+                    </MenuBlock>
+                </MenuBlockContainer>
+                <MenuBlockContainer>
+                    <BlockHeaderText>Settings</BlockHeaderText>
+                    <MenuBlock>
+                        <Block>
+                            <BlockText>English</BlockText>
+                        </Block>
+                        <ArrowLeft src={ArrowLeftIcon}/>
+                    </MenuBlock>
+                    <MenuBlock>
+                        <Block>
+                            
+                            <BlockText>Log out</BlockText>
+                        </Block>
+                        <ArrowLeft src={ArrowLeftIcon}/>
+                    </MenuBlock>
+                </MenuBlockContainer>
+            </ProfileContainer>
        </ContainerBlock>
     )
 }
@@ -74,7 +67,7 @@ const MenuBlock = styled.a `
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 12px;
-    padding: 31px;
+    padding: 13px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -92,9 +85,9 @@ const Block = styled.div `
     align-items: center;
 `
 const BlockIcon = styled.img `
-    margin-right: 20px;
-    width: 33px;
-    height: 33px;
+    margin-right: 10px;
+    width: 17px;
+    height: 17px;
 `
 const BlockText = styled.div `
     font-family: 'Plus Jakarta Sans';
@@ -109,7 +102,7 @@ const ArrowLeft = styled.img `
     vertical-align: middle;
 `
 const ProfileContainer = styled.div `
-    margin-top: 20px;
+    margin: 20px 16px 0px 16px;
 `
 const View = styled.div `
     font-family: 'Plus Jakarta Sans';
@@ -121,7 +114,6 @@ const View = styled.div `
     color: #000;
 `
 const ContainerBlock = styled.div `
-    display: flex;
     height: 100vh;
 `
 const Layout = styled.div `

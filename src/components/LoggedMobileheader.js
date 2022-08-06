@@ -3,12 +3,17 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import UserImageSvg from 'assets/media/user.svg';
 import LogoSvg from 'assets/media/Logo.svg';
-const LoggedMobileheader = ({title, description, noLogo, bigBg, showCard}) => {
-    
+import ArrowLeftIcon from 'assets/media/arrow-left-white.svg';
+import { useHistory } from "react-router-dom";
+
+const LoggedMobileheader = ({title, description, backButton, noLogo, bigBg, showCard}) => {
+    let history = useHistory();
 
     return (
         <LoggedHeaderContainer bigBg={bigBg ? 155 : 125}>
-            {!noLogo ? <LogoBlock><img src={LogoSvg}/></LogoBlock> : <View/>}
+            <Fragment>
+            {backButton ? <View onClick={() => history.goBack()}><img src={ArrowLeftIcon} /></View> : !noLogo ? <LogoBlock><img src={LogoSvg}/></LogoBlock> : <View/>}
+            </Fragment>
             {
             title ? 
                 <CenterBlock>
@@ -33,8 +38,8 @@ const LoggedHeaderContainer = styled.div `
     align-items: center;
     background-color: #000;
     height: ${props => props.bigBg+'px'};
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 22px;
+    padding-right: 22px;
 `
 const UserBlock = styled.div `
     & > img {

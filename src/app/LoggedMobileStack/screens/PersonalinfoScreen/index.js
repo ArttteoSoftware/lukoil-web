@@ -1,6 +1,6 @@
 import React, { useState, Fragment, useEffect, useContext, useRef } from 'react';
 import styled from 'styled-components';
-import { MainOrders, MainBalance, LoggedHeader, FloatLable } from 'components';
+import { LoggedMobileheader, FloatLable } from 'components';
 import  { Button, Form, Input } from 'antd';
 import ArrowLeftIcon from 'assets/media/arrow-left.svg';
 import EditSvgIcon from 'assets/media/edit-2.svg';
@@ -19,62 +19,59 @@ const PersonalinfoScreen = ({history}) => {
 
     return (
        <ContainerBlock>
-            <Layout>
-                <LoggedHeader showRightSide/>
-                <ProfileContainer>
-                    <View onClick={() => history.goBack()}>
-                        <img src={ArrowLeftIcon} style={{marginRight: 10}}/>
-                        Personal info
-                    </View>
-                    <Form 
-                        form={form}
-                        name="personal_info_form" 
-                        layout="vertical" 
-                        onFinish={submitForm}
-                        autoComplete="off"
-                        className="ymgf-dssd"
-                        initialValues={{
-                            'frist_name': "Irakli",
-                            'last_name': 'Rekhviashvili',
-                            'email': 'example@gmail.com',
-                            'phone': '+995 512345678'
-                        }}
-                    >
-                    <FormView>
-                        <Form.Item name="frist_name">
-                            <FloatLable disabled label={'Frist name'}/>
-                        </Form.Item>
-                        <Form.Item name="last_name">
-                            <FloatLable disabled label={'Last name'}/>
-                        </Form.Item>
-                        <Form.Item name="email">
-                            <FloatLable editable label={'Email'}/>
-                        </Form.Item>
-                        <Form.Item name="phone">
-                            <FloatLable editable label={'Phone'}/>
-                        </Form.Item>
-                        <MenuBlock onClick={() => history.push('/profile/change-password')}>
-                            <Block>
-                                <LabelText>Password</LabelText>
-                                <BlockText>**********</BlockText>
-                            </Block>
-                            <EditIcon src={EditSvgIcon}/>
-                        </MenuBlock>
-                    </FormView>
-                    <FormButton>
-                        <Button type="primary" htmlType="submit" block>Save changes</Button>
-                    </FormButton>
-                    </Form>
-                </ProfileContainer>
-            </Layout>
-            <RightPanel>
-                <MainBalance/>
-                <MainOrders/>
-            </RightPanel>
+            <LoggedMobileheader backButton/>
+            <ProfileContainer>
+                <View>
+                    Personal info
+                </View>
+                <Form 
+                    form={form}
+                    name="personal_info_form" 
+                    layout="vertical" 
+                    onFinish={submitForm}
+                    autoComplete="off"
+                    className="ymgf-dssd"
+                    initialValues={{
+                        'frist_name': "Irakli",
+                        'last_name': 'Rekhviashvili',
+                        'email': 'example@gmail.com',
+                        'phone': '+995 512345678'
+                    }}
+                >
+                <FormView>
+                    <Form.Item name="frist_name">
+                        <FloatLable disabled label={'Frist name'}/>
+                    </Form.Item>
+                    <Form.Item name="last_name">
+                        <FloatLable disabled label={'Last name'}/>
+                    </Form.Item>
+                    <Form.Item name="email">
+                        <FloatLable editable label={'Email'}/>
+                    </Form.Item>
+                    <Form.Item name="phone">
+                        <FloatLable editable label={'Phone'}/>
+                    </Form.Item>
+                    <MenuBlock onClick={() => history.push('/profile/change-password')}>
+                        <Block>
+                            <LabelText>Password</LabelText>
+                            <BlockText>**********</BlockText>
+                        </Block>
+                        <EditIcon src={EditSvgIcon}/>
+                    </MenuBlock>
+                </FormView>
+                <FormButton>
+                    <Button type="primary" htmlType="submit" block>Save changes</Button>
+                </FormButton>
+                </Form>
+            </ProfileContainer>
        </ContainerBlock>
     )
 }
 const MenuBlock = styled.a `
+    @media only screen and (min-width:300px) and (max-width:768px){
+        padding: 7px 16px;
+        border-radius: 8px;
+    }
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 12px;
@@ -122,18 +119,21 @@ const FormView = styled.div `
     
 `
 const FormButton = styled.div `
+    @media only screen and (min-width:300px) and (max-width:768px){
+        bottom: 70px;
+    }
     position: absolute;
     bottom: 32px;
     width: 93%;
 `
 const ProfileContainer = styled.div `
-    margin-top: 20px;
+    margin: 20px 16px 0px 16px;
 `
 const View = styled.div `
     font-family: 'Plus Jakarta Sans';
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
-    line-height: 25px;
+    line-height: 16px;
     letter-spacing: -0.2800000011920929px;
     text-align: left;
     color: #000;
@@ -144,17 +144,6 @@ const View = styled.div `
     cursor: pointer;
 `
 const ContainerBlock = styled.div `
-    display: flex;
     height: 100vh;
-`
-const Layout = styled.div `
-    flex: 1;
-    padding: 32px;
-    position: relative;
-`
-const RightPanel = styled.div `
-    padding: 32px;
-    width: 406px;
-    background-color: #F2F2F2;
 `
 export default PersonalinfoScreen;

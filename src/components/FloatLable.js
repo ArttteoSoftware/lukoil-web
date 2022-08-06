@@ -28,8 +28,12 @@ const FloatLable = (props) => {
     )
 }
 const EditableIcon = styled.img `
-position: absolute;
-top: 30px;
-right: 30px;
+    @media only screen and (min-width:300px) and (max-width:768px){
+        top: 17px;
+        right: 16px;
+    }
+    position: absolute;
+    top: 30px;
+    right: 30px;
 `
 export default FloatLable;
